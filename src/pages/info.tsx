@@ -1,13 +1,17 @@
 import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
 import { Global, css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 const TextStyle = css`
   font-size: 18px;
   font-weight: 700;
   color: gray;
 `
-
+const Text1 = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+`
 type InfoPageProps = {
   data: {
     site: {
@@ -39,7 +43,8 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
     <div>
       <Global styles={globalStyle} />
       <div css={TextStyle}>{title}</div>
-      {description} {author}
+      <Text1>{description}</Text1>
+      {author}
     </div>
   )
 }
