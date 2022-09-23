@@ -44,6 +44,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
 `
 // &: last-of-type {} 이렇게 &:앞에 스페이스 넣으면 적용안됨 !!!!!!!!!!!!!!!!!!!! 이거 30분동안 삽질함 ㅋㅋ
+
 const CategoryList: FunctionComponent<CategoryListProps> = function ({
   selectedCategory,
   categoryList,
