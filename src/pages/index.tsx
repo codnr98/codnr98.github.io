@@ -7,7 +7,7 @@ import CategoryList from 'components/Main/CategoryList'
 
 const CATEGORY_LIST = {
   All: 5,
-  Wev: 3,
+  Web: 3,
   mobile: 2,
 }
 
