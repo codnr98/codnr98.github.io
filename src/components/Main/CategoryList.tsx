@@ -9,6 +9,7 @@ type CategoryItemProps = {
 
 type GatsbyLinkProps = {
   children: ReactNode
+  // ReactNode는 children 타입형식중 하나며 React elements, primitives, portals, fragments 모든것을 받아들인다.
   className?: string
   to: string
 } & CategoryItemProps
@@ -28,7 +29,7 @@ const CategoryListWrapper = styled.div`
   width: 768px;
   margin: 100px auto 0;
 `
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   <Link {...props} />
 ))<CategoryItemProps>`
