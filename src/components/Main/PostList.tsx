@@ -32,4 +32,5 @@ const PostList: FunctionComponent = function () {
   )
 }
 // 왜? ...를 써야할까?
+// 이유 일단 컴포넌트 Props로 배열이 오면 안되서 인듯
 export default PostList
