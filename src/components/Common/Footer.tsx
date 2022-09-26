@@ -9,15 +9,26 @@ const FooterWrapper = styled.div`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+`
+const Background = styled.div`
+  width: 100%;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: #ffffff;
 `
 
 const Footer: FunctionComponent = function () {
   return (
-    <FooterWrapper>
-      Thank you for visiting My Blog, Have a Good day
-      <br />
-      Powered By Gatsby.
-    </FooterWrapper>
+    <Background>
+      <FooterWrapper>
+        Thank you for visiting My Blog, Have a Good day
+        <br />
+        Powered By Gatsby.
+      </FooterWrapper>
+    </Background>
   )
 }
 
