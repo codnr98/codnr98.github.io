@@ -4,7 +4,8 @@ import GlobalStyle from 'components/Common/GlobalStyle'
 import Introduction from 'components/Main/Introduction'
 import Footer from 'components/Common/Footer'
 import CategoryList from 'components/Main/CategoryList'
-import PostList, { PostType } from 'components/Main/PostList'
+import PostList from 'components/Main/PostList'
+import { PostListItemType } from 'types/PostItem.types'
 import { graphql } from 'gatsby'
 
 const CATEGORY_LIST = {
@@ -20,13 +21,12 @@ const Container = styled.div`
 `
 
 type IndexPageProps = {
-  data: [
-    {
-      allMarkdownRemark: {
-        edges: PostType[]
-      }
-    },
-  ]
+  data: {
+    allMarkdownRemark: {
+      edges: PostListItemType[]
+      // 메인페이지에서 edges프로퍼티 타입을 PostType[]으로 지정했기 때문에 다른 페이지에서도 PostType[]으로 사용할 수 있다.
+    }
+  }
 }
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
@@ -39,7 +39,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       <GlobalStyle />
       <Introduction />
       <CategoryList selectedCategory="Web" categoryList={CATEGORY_LIST} />
-      <PostList Poste={edges} />
+      <PostList posts={edges} />
       <Footer />
     </Container>
   )

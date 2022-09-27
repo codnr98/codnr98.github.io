@@ -1,20 +1,10 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import PostItem from './PostItem'
+import { PostListItemType } from 'types/PostItem.types'
 
-export type PostType = {
-  node: {
-    id: string
-    frontmatter: {
-      title: string
-      summary: string
-      date: string
-      categories: string[]
-      thumbnail: {
-        publicURL: string
-      }
-    }
-  }
+type PostListProps = {
+  posts: PostListItemType[]
 }
 
 const PostListWrapper = styled.div`
@@ -31,9 +21,14 @@ const PostListWrapper = styled.div`
     padding: 50px 20px;
   }
 `
-const PostList: FunctionComponent = function () {
-  return <PostListWrapper></PostListWrapper>
+const PostList: FunctionComponent<PostListProps> = function ({ posts }) {
+  return (
+    <PostListWrapper>
+      {posts.map(({ node: { id, frontmatter } }: PostListItemType) => (
+        <PostItem {...frontmatter} link="https://google.co.kr/" key={id} />
+      ))}
+    </PostListWrapper>
+  )
 }
-// 왜? ...를 써야할까?
-// 이유 일단 컴포넌트 Props로 배열이 오면 안되서 인듯
+
 export default PostList

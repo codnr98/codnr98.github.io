@@ -1,17 +1,11 @@
 import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { PostFrontmatterType } from 'types/PostItem.types'
 // 위 세가지 종류의 import 차이점?
 
 // 타입지정
-type PostItemProps = {
-  title: string
-  date: string
-  categories: string[]
-  summary: string
-  thumbnail: string
-  link: string
-}
+type PostItemProps = PostFrontmatterType & { link: string }
 
 // Link 컴포넌트로 정의
 const PostItemWrapper = styled(Link)`
@@ -89,12 +83,12 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   date,
   categories,
   summary,
-  thumbnail,
+  thumbnail: { publicURL },
   link,
 }) {
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage src={thumbnail} alt="Post Item Image" />
+      <ThumbnailImage src={publicURL} alt="Post Item Image" />
 
       <PostItemContent>
         <Title>{title}</Title>
