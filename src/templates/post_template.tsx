@@ -4,6 +4,7 @@ import { PostPageItemType } from 'types/PostItem.types'
 import Template from 'components/Common/Template'
 import PostHead from 'components/Post/PostHead'
 import PostContent from 'components/Post/PostContent'
+import CommentWidget from 'components/Post/CommentWidget'
 
 type PostTemplateProps = {
   data: {
@@ -13,45 +14,31 @@ type PostTemplateProps = {
   }
 }
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) {
-  const {
-    node: {
-      html,
-      frontmatter: {
-        title,
-        summary,
-        date,
-        categories,
-        thumbnail: {
-          childImageSharp: { gatsbyImageData },
-        },
-      },
-    },
-  } = edges[0]
-
-  return (
-    <Template>
-      <PostHead
-        title={title}
-        date={date}
-        categories={categories}
-        thumbnail={gatsbyImageData}
-      />
-      <PostContent html={html} />
-    </Template>
-  )
-}
-
 export type PostPageItemType = {
   node: {
     html: string
     frontmatter: PostFrontmatterType
   }
 }
+
+const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) {
+  const {
+    node: { html, frontmatter },
+  } = edges[0]
+
+  return (
+    <Template>
+      <PostHead {...frontmatter} />
+      <PostContent html={html} />
+      <CommentWidget />
+    </Template>
+  )
+}
+
 export default PostTemplate
 
 export const queryMarkdownDataBySlug = graphql`
