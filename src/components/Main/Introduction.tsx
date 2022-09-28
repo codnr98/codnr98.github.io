@@ -48,7 +48,7 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
 
         <div>
           <SubTitle>Nice to Meet You,</SubTitle>
-          <Title>I'm Junior Frontend Developer Hyun.</Title>
+          <Title>I'm Junior Frontend Developer Wook.</Title>
         </div>
       </Wrapper>
     </Background>
