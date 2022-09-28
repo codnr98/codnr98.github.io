@@ -7,6 +7,7 @@ import CategoryList from 'components/Main/CategoryList'
 import PostList from 'components/Main/PostList'
 import { PostListItemType } from 'types/PostItem.types'
 import { graphql } from 'gatsby'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 const CATEGORY_LIST = {
   All: 5,
@@ -24,7 +25,11 @@ type IndexPageProps = {
   data: {
     allMarkdownRemark: {
       edges: PostListItemType[]
-      // 메인페이지에서 edges프로퍼티 타입을 PostType[]으로 지정했기 때문에 다른 페이지에서도 PostType[]으로 사용할 수 있다.
+    }
+    file: {
+      childImageSharp: {
+        gatsbyImageData: IGatsbyImageData
+      }
     }
   }
 }
@@ -32,12 +37,15 @@ type IndexPageProps = {
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   data: {
     allMarkdownRemark: { edges },
+    file: {
+      childImageSharp: { gatsbyImageData },
+    },
   },
 }) {
   return (
     <Container>
       <GlobalStyle />
-      <Introduction />
+      <Introduction profileImage={gatsbyImageData} />
       <CategoryList selectedCategory="Web" categoryList={CATEGORY_LIST} />
       <PostList posts={edges} />
       <Footer />
@@ -67,6 +75,11 @@ export const getPostList = graphql`
             }
           }
         }
+      }
+    }
+    file(name: { eq: "profile-image" }) {
+      childImageSharp {
+        gatsbyImageData(width: 120, height: 120)
       }
     }
   }
