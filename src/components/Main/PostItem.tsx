@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { PostFrontmatterType } from 'types/PostItem.types'
+import { GatsbyImage } from 'gatsby-plugin-image'
 // 위 세가지 종류의 import 차이점?
 
 // 타입지정
@@ -21,11 +22,10 @@ const PostItemWrapper = styled(Link)`
   }
 `
 //img 컴포넌트로 정의
-const ThumbnailImage = styled.img`
+const ThumbnailImage = styled(GatsbyImage)`
   width: 100%;
-  height: 160px;
+  height: 200px;
   border-radius: 10px 10px 0 0;
-  object-fit: cover;
 `
 // div 컴포넌트로 정의
 const PostItemContent = styled.div`
@@ -83,12 +83,14 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
   date,
   categories,
   summary,
-  thumbnail: { publicURL },
+  thumbnail: {
+    childImageSharp: { gatsbyImageData },
+  },
   link,
 }) {
   return (
     <PostItemWrapper to={link}>
-      <ThumbnailImage src={publicURL} alt="Post Item Image" />
+      <ThumbnailImage image={gatsbyImageData} alt="Post Item Image" />
 
       <PostItemContent>
         <Title>{title}</Title>
