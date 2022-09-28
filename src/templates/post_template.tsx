@@ -20,7 +20,6 @@ export type PostPageItemType = {
     frontmatter: PostFrontmatterType
   }
 }
-
 const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   data: {
     allMarkdownRemark: { edges },
