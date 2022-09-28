@@ -31,6 +31,27 @@ const PrevPageIcon = styled.div`
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 `
+const Title = styled.div`
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  margin-top: auto;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 45px;
+  font-weight: 800;
+`
+
+const PostData = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+`
 
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
@@ -44,6 +65,11 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
       <PrevPageIcon onClick={goBackPage}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </PrevPageIcon>
+      <Title>{title}</Title>
+      <PostData>
+        <div>{categories.join(' / ')}</div>
+        <div>{date}</div>
+      </PostData>
     </PostHeadInfoWrapper>
   )
 }
