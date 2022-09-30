@@ -1,9 +1,9 @@
 ---
 date: '2022-09-29'
 title: '모던 자바스크립트 Deep Dive 04장 변수'
-categories: ['Web', '모던 자바스크립트 Deep Dive']
+categories: ['Web', 'Modern Deep Dive']
 summary: '모던 자바스크립트 Deep Dive 04장 변수를 공부하고...'
-thumbnail: './Modern Javascript Deep Dive.png'
+thumbnail: './Modern_Javascript_Deep_Dive.png'
 ---
 
 # 04장 변수
