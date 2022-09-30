@@ -25,7 +25,7 @@ thumbnail: './test.png'
   메모리 공간에서 저장된 값을 식별할 수 있는 고유한 이름
 변수 값
   변수에 저장된 값을 변수 값
-할당(assingment)
+할당(assignment)
   변수에 값을 저장하는 것
 </pre>
 
