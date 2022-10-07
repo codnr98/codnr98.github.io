@@ -2,8 +2,6 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 
-// 자신이 원하는 프로필 이미지 링크로 설정
-// JavaScript에서는 변수가 상수를 담을때 변수명은 전체 대문자와 _로 구성한다.
 type ProfileImageProps = {
   profileImage: IGatsbyImageData
 }

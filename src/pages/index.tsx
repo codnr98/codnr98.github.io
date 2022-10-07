@@ -11,6 +11,7 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
 import InteractiveList from 'components/Main/CategoryListVer2'
+import { CategoryListProps } from 'components/Main/CategoryList'
 
 const Container = styled.div`
   display: flex;
@@ -70,7 +71,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
             node: {
               frontmatter: { categories },
             },
-          }: PostType,
+          }: PostListItemType,
         ) => {
           categories.forEach(category => {
             if (list[category] === undefined) list[category] = 1
@@ -140,9 +141,9 @@ export const getPostList = graphql`
     }
     file(name: { eq: "profile-image" }) {
       childImageSharp {
-        gatsbyImageData(width: 120, height: 120)
+        gatsbyImageData(width: 120, height: 140)
       }
-      publicURL
     }
   }
 `
+//사진 조정은 쿼리문에서 수정한다.
