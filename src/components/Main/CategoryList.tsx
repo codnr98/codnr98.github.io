@@ -50,6 +50,7 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   }
   @media (max-width: 768px) {
     font-size: 15px;
+  }
 `
 // &: last-of-type {} 이렇게 &:앞에 스페이스 넣으면 적용안됨 !!!!!!!!!!!!!!!!!!!! 이거 30분동안 삽질함 ㅋㅋ
 

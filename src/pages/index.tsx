@@ -10,6 +10,7 @@ import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
+import InteractiveList from 'components/Main/CategoryListVer2'
 
 const Container = styled.div`
   display: flex;
@@ -93,6 +94,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       image={publicURL}
     >
       <Introduction profileImage={gatsbyImageData} />
+      <InteractiveList />
       <CategoryList
         selectedCategory={selectedCategory}
         categoryList={categoryList}
