@@ -2,7 +2,7 @@
 date: '2022-10-06'
 title: '[React]styled-component'
 categories: ['Web', 'React', 'styled-component']
-summary: 'test'
+summary: 'styled-component란?'
 thumbnail: './Playing-with-Styled-Components.png'
 ---
 
