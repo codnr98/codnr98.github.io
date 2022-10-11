@@ -12,12 +12,6 @@ import queryString, { ParsedQuery } from 'query-string'
 import Template from 'components/Common/Template'
 import { CategoryListProps } from 'components/Main/CategoryList'
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`
-
 type IndexPageProps = {
   location: {
     search: string
