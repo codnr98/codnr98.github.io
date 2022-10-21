@@ -2,7 +2,7 @@
 date: '2022-10-21'
 title: '[TIL]변수 그리고 선언과 할당'
 categories: ['Web', 'Javascript', '변수', '변수선언', '변수할당']
-summary: 'styled-component란?'
+summary: '변수선언과 할당...?'
 thumbnail: './tilvar.png'
 ---
 
