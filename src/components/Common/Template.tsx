@@ -58,7 +58,6 @@ const Template: FunctionComponent<TemplateProps> = function ({
           name="google-site-verification"
           content="uCa8rfGo5-Im9l7dOo_N0hz_CHDhf3S-g-Nxt_NyOwk"
         />
-
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />
