@@ -18,6 +18,12 @@ const Container = styled.main`
   height: 100%;
 `
 
+const contentsContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
+
 const Template: FunctionComponent<TemplateProps> = function ({
   title,
   description,
@@ -50,7 +56,6 @@ const Template: FunctionComponent<TemplateProps> = function ({
 
         <html lang="ko" />
       </Helmet>
-
       <GlobalStyle />
       {children}
       <Footer />
