@@ -18,9 +18,9 @@ ES5에는 생성자 함수를 통해 객체지향 프로그래밍을 해왔지�
 // Class의 이름은 일반적인 함수들과 구분하기 위해 앞글자를 대문자로 작성한다.
 class Student {
   constructor(name, major, id) {
-    this.name
-    this.major
-    this.id
+    this.name = name
+    this.major = major
+    this.id = id
   }
 }
 // 인스턴스를 만들때는 new키워드를 사용해 만든다.
