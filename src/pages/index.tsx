@@ -36,6 +36,12 @@ type IndexPageProps = {
   }
 }
 
+const Container = styled.main`
+  display: flex;
+  /* flex-direction: column; */
+  height: 100%;
+`
+
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
   data: {
@@ -88,11 +94,14 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
       image={publicURL}
     >
       <Introduction profileImage={gatsbyImageData} />
-      <CategoryList
-        selectedCategory={selectedCategory}
-        categoryList={categoryList}
-      />
-      <PostList selectedCategory={selectedCategory} posts={edges} />
+
+      <Container>
+        <PostList selectedCategory={selectedCategory} posts={edges} />
+        <CategoryList
+          selectedCategory={selectedCategory}
+          categoryList={categoryList}
+        />
+      </Container>
     </Template>
   )
 }
