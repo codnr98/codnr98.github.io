@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react'
 import { ReactNode } from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-
 type CategoryItemProps = {
   active: boolean
 }
