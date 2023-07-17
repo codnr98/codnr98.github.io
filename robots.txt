@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://codnr98.github.io/sitemap/sitemap-index.xml
+Host: https://codnr98.github.io
