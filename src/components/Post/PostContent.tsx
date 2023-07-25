@@ -21,7 +21,7 @@ const MarkdownRenderer = styled.div`
 
   // Apply Padding Attribute to All Elements
   p {
-    padding: 3px 0;
+    padding: 2px 0;
   }
 
   // Adjust Heading Element Style
@@ -29,7 +29,7 @@ const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   * + h1,
@@ -68,13 +68,13 @@ const MarkdownRenderer = styled.div`
   ol,
   ul {
     margin-left: 20px;
-    padding: 30px 0;
+    padding: 20px 0;
   }
 
   // Adjust Horizontal Rule style
   hr {
-    border: 1px solid #000000;
-    margin: 100px 0;
+    border: 0.5px solid #000000;
+    margin: 20px 0;
   }
 
   // Adjust Link Element Style
@@ -85,7 +85,7 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Code Style
   pre[class*='language-'] {
-    margin: 30px 0;
+    margin: 20px 0;
     padding: 15px;
     font-size: 15px;
 
