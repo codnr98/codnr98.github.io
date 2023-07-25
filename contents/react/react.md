@@ -3,7 +3,7 @@ date: '2023-05-25'
 title: '[React]React 작동방식'
 categories: ['Web', 'React', '작동방식']
 summary: 'React 작동방식?'
-thumbnail: './useEffect.png'
+thumbnail: './react.png'
 ---
 
 ### React 가 웹을 렌더링 하는 과정
