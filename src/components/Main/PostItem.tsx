@@ -11,6 +11,7 @@ type PostItemProps = PostFrontmatterType & { link: string }
 // Link 컴포넌트로 정의
 const PostItemWrapper = styled(Link)`
   display: flex;
+  height: 374px;
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
@@ -36,16 +37,16 @@ const PostItemContent = styled.div`
 `
 const Title = styled.div`
   display: -webkit-box;
-  overflow: hidden
-  margin-bottom: 3px
-  text-overflow: ellipsis
-  white-space: normal
+  overflow: hidden;
+  margin-bottom: 3px;
+  text-overflow: ellipsis;
+  white-space: normal;
   overflow-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 20px;
   font-weight: 700;
-  `
+`
 const Date = styled.div`
   font-size: 14px;
   font-weight: 400;
