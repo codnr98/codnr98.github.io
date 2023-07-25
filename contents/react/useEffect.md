@@ -1,5 +1,5 @@
 ---
-date: '2023-07-25'
+date: '2023-05-25'
 title: '[React]useEffect'
 categories: ['Web', 'React', 'useEffect']
 summary: 'useEffect란?'
