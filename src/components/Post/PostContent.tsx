@@ -27,15 +27,19 @@ const MarkdownRenderer = styled.div`
   // Adjust Heading Element Style
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 60px;
+  }
+  * + h4 {
+    margin-top: 30px;
   }
 
   hr + h1,
@@ -54,6 +58,10 @@ const MarkdownRenderer = styled.div`
 
   h3 {
     font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
   }
 
   // Adjust Quotation Element Style
@@ -117,6 +125,10 @@ const MarkdownRenderer = styled.div`
 
     h3 {
       font-size: 17px;
+    }
+
+    h4 {
+      font-size: 15px;
     }
 
     img {
