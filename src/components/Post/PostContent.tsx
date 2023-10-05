@@ -108,6 +108,13 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
   }
 
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+    border: 1px solid;
+  }
+
   // Markdown Responsive Design
   @media (max-width: 768px) {
     width: 100%;
