@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.21.1"/><style data-href="/styles.811b76fa2f764e4356d7.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="canonical" href="https://codnr98.github.io/javascript/execution-context-2/" data-baseprotocol="https:" data-basehost="codnr98.github.io"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 13ku56z">.css-13ku56z{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}</style><main class="css-13ku56z e1strnqo1"><style data-emotion="css-global kxm5mf">@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Nanum Myeongjo',serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 16cz9yp">.css-16cz9yp{position:relative;width:100%;height:400px;}@media (max-width: 768px){.css-16cz9yp{height:300px;}}</style><div class="css-16cz9yp e1opi4mu1"><style data-emotion="css 1bjn9yo">.css-1bjn9yo{z-index:-1;width:100%;height:400px;object-fit:cover;-webkit-filter:brightness(0.25);filter:brightness(0.25);}@media (max-width: 768px){.css-1bjn9yo{height:300px;}}</style><div data-gatsby-image-wrapper="" style="position:absolute" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1bjn9yo e1opi4mu0"><div style="max-width:1846px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height=&#x27;1118&#x27; width=&#x27;1846&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27; version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA3UlEQVQoz62S20rDQBCG9/0fxuKFVpGApYKWzcELS1MRgyQ90CKNOVRJMV/ZlYQmJNKWXHwMM7vz7z/Miiw06RJBJOkSkX+ZNCPJo7/4G8pKLOpNfYLIpA3VRGLD9zOkNmwdnet6S49oEilQ+cfkmrG8YOpc4to9Zq+3kFiVO/8KVt1Z7DYj0uUDP+tH4sWQ7POpFDzJIbFFPB/iu33WnqEJgwGrd0M/oM6PclgKJhYb/x7v5UqLLd/uWHkGgXujnR4tWB9ZL0ItpEDl8TkjF1/mYEn1hZ3k8Fw6F9wDjfV6fvhdBEEAAAAASUVORK5CYII=" alt=""/><picture><source type="image/webp" data-srcset="/static/3684b21c31b94e60aeac030f100775da/f4468/execution-context-2.webp 462w,/static/3684b21c31b94e60aeac030f100775da/b684a/execution-context-2.webp 923w,/static/3684b21c31b94e60aeac030f100775da/a4ce8/execution-context-2.webp 1846w" sizes="(min-width: 1846px) 1846px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1846px) 1846px, 100vw" decoding="async" loading="lazy" data-src="/static/3684b21c31b94e60aeac030f100775da/b37d2/execution-context-2.png" data-srcset="/static/3684b21c31b94e60aeac030f100775da/2a641/execution-context-2.png 462w,/static/3684b21c31b94e60aeac030f100775da/58276/execution-context-2.png 923w,/static/3684b21c31b94e60aeac030f100775da/b37d2/execution-context-2.png 1846w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/3684b21c31b94e60aeac030f100775da/f4468/execution-context-2.webp 462w,/static/3684b21c31b94e60aeac030f100775da/b684a/execution-context-2.webp 923w,/static/3684b21c31b94e60aeac030f100775da/a4ce8/execution-context-2.webp 1846w" sizes="(min-width: 1846px) 1846px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1846px) 1846px, 100vw" decoding="async" loading="lazy" src="/static/3684b21c31b94e60aeac030f100775da/b37d2/execution-context-2.png" srcSet="/static/3684b21c31b94e60aeac030f100775da/2a641/execution-context-2.png 462w,/static/3684b21c31b94e60aeac030f100775da/58276/execution-context-2.png 923w,/static/3684b21c31b94e60aeac030f100775da/b37d2/execution-context-2.png 1846w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css m1156n">.css-m1156n{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;height:100%;margin:0 auto;padding:60px 0;color:#ffffff;}@media (max-width: 768px){.css-m1156n{width:100%;padding:40px 20px;}}</style><div class="css-m1156n e1st1jau3"><style data-emotion="css gywgo7">.css-gywgo7{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#ffffff;color:#000000;font-size:22px;cursor:pointer;box-shadow:0 0 10px rgba(0, 0, 0, 0.3);}@media (max-width: 768px){.css-gywgo7{width:30px;height:30px;font-size:18px;}}</style><div class="css-gywgo7 e1st1jau2"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></div><style data-emotion="css gn4qtp">.css-gn4qtp{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;margin-top:auto;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:45px;font-weight:800;}@media (max-width: 768px){.css-gn4qtp{font-size:30px;}}</style><div class="css-gn4qtp e1st1jau1">[JS]실행 컨텍스트(2)</div><style data-emotion="css 3gcnt2">.css-3gcnt2{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}@media (max-width: 768px){.css-3gcnt2{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;font-size:15px;font-weight:400;}}</style><div class="css-3gcnt2 e1st1jau0"><div>Web / javascript / 실행 컨텍스트</div><div>2023.09.27.</div></div></div></div><style data-emotion="css 100u532">.css-100u532{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:100px 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}.css-100u532 p{padding:2px 0;}.css-100u532 h1,.css-100u532 h2,.css-100u532 h3,.css-100u532 h4{font-weight:800;margin-bottom:12px;}.css-100u532 *+h1,.css-100u532 *+h2,.css-100u532 *+h3{margin-top:60px;}.css-100u532 *+h4{margin-top:30px;}.css-100u532 hr+h1,.css-100u532 hr+h2,.css-100u532 hr+h3{margin-top:0;}.css-100u532 h1{font-size:30px;}.css-100u532 h2{font-size:25px;}.css-100u532 h3{font-size:20px;}.css-100u532 h4{font-size:18px;}.css-100u532 blockquote{margin:30px 0;padding:5px 15px;border-left:2px solid #000000;font-weight:800;}.css-100u532 ol,.css-100u532 ul{margin-left:20px;padding:20px 0;}.css-100u532 hr{border:0.5px solid #000000;margin:20px 0;}.css-100u532 a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-100u532 pre[class*='language-']{margin:20px 0;padding:15px;font-size:15px;}.css-100u532 pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-100u532 code[class*='language-'],.css-100u532 pre[class*='language-']{tab-size:2;}.css-100u532 table,.css-100u532 th,.css-100u532 td{border-collapse:collapse;border:1px solid;}@media (max-width: 768px){.css-100u532{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-100u532 h1{font-size:23px;}.css-100u532 h2{font-size:20px;}.css-100u532 h3{font-size:17px;}.css-100u532 h4{font-size:15px;}.css-100u532 img{width:100%;}.css-100u532 hr{margin:50px 0;}}</style><div class="css-100u532 e1ijh0y10"><h3>실행 컨텍스트의 생성과 식별자 검색 과정</h3>
+<h4>전역 객체 생성</h4>
+<p>전역 객체는 전역코드가 평가 되기전 생성된다. 전역 객체에는 빌트인 전역 프로퍼티,
+빌트인 전역 함수, 표준 빌트인 객체가 추가되며 동작 환경에 따라(클라이언트 사이드, 서버 사이드)에 따라 클라이언트 사이드 Web API 또는 특정 환경을 위한 호스트 객체를 포함한다.</p>
+<h4>전역 코드 평가</h4>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/70e8f3dd7b90edce45ce07fa0714f613/4a54d/execution-context-2-1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 31.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA40lEQVQY01WR2QqFMAxE/f9/881HEXHBKlZr3ddcTkDhFgbaMJmZpIH3XpxzH4ZhkPM8ZZomvY/jKNd1CWffd63P86yc53nkOA593/etCLquk7Zt/wAZEga8EVrXVYwxEsexlGUp27Z9yLJMuRgHfd8LeBNyR4xkAHEE1cBaaY2RyXutD85pYozyPFfxwForRVGoCyARaSAiyEiAGitomkbqutb3sizfCuCqIIQoiiQMQ0mSRKqq0kaa3jt7fhOnaarG9LFDxsSQoztkRHZCSvZJYpypAZKQgKb3UwAcxgaIIg5+MDjK8xbvW4gAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/70e8f3dd7b90edce45ce07fa0714f613/a59e9/execution-context-2-1.webp 192w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/0ca9f/execution-context-2-1.webp 384w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/dc9b9/execution-context-2-1.webp 768w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/e2c2f/execution-context-2-1.webp 1152w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/f3efb/execution-context-2-1.webp 1536w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/ffc14/execution-context-2-1.webp 2392w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/70e8f3dd7b90edce45ce07fa0714f613/3b721/execution-context-2-1.png 192w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/66595/execution-context-2-1.png 384w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/fe486/execution-context-2-1.png 768w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/d2d74/execution-context-2-1.png 1152w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/e8464/execution-context-2-1.png 1536w,
+/static/70e8f3dd7b90edce45ce07fa0714f613/4a54d/execution-context-2-1.png 2392w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/70e8f3dd7b90edce45ce07fa0714f613/fe486/execution-context-2-1.png"
+            alt="스크린샷 2023-10-14 오후 12.07.51.png"
+            title="스크린샷 2023-10-14 오후 12.07.51.png"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<ol>
+<li>전역 실행 컨텍스트 생성
+<ul>
+<li>비어있는 전역 실행 컨텍스트를 생성하여 실행 컨텍스트 스택에 푸쉬한다.</li>
+</ul>
+</li>
+<li>전역 렉시컬 환경 생성
+<ol>
+<li>전역 환경 레코드 생성
+<ul>
+<li>‘전역 환경 레코드’는 ‘객체 환경 레코드’ 와 ‘선언적 환경 레코드’로 구성되어 있다.</li>
+<li>객체 환경 레코드
+var, 함수 선언문으로 정의한 전역 함수, 빌트인 전역 프로퍼티와 빌트인 전역 함수, 표준 빌트인 객체를 관리</li>
+<li>선언적 환경 레코드
+let, const 키워드로 선언한 전역 변수를 관리</li>
+</ul>
+<ol>
+<li>객체 환경 레코드 생성
+<ul>
+<li>전역 환경 레코드를 구성하는 컴포넌트인 객체 환경 레코드는 BindingObject라고 부르는 객체와 연결된다.</li>
+<li>BindingObject는 “전역 객체 생성” 에서 생성된 전역 객체다.</li>
+<li>전역 코드 평과 과정에서 ‘var 키워드’로 선언된 ‘전역 변수’와 ‘함수 선언문’으로 정의된 ‘전역 함수’는 ‘전역 환경 레코드’의 ‘객체 환경 레코드’에 연결된 ‘BindingObject’를 통해 ‘전역 객체’의 ‘프로퍼티’와 ‘메서드’가 된다.</li>
+<li>var 키워드로 선언한 변수는 코드 실행단계에서 변수 선언문 이전에도 참조할 수 있다. 하지만 해당 값은 언제나 undefined다. var 키워드로 선언한 변수에 할당된 함수 표현식도 이와 동일하게 동작한다. 이것이 변수 호이스팅이 발생하는 원인이다.</li>
+<li>함수 선언문으로 정의한 함수가 평가되면 함수 이름 과 동일한 이름의 식별자를 객체 환경 레코드에 바인딩 된 BindingObject를 통해 전역 객체에 키로 등록하고 생성된 함수 객체를 즉시 할당한다. 이것이 변수 호이스팅과 함수 호이스팅의 차이다. 즉 함수 선언문으로 정의 한 함수는 함수 선언문 이전에 호출할 수 있다.</li>
+</ul>
+</li>
+<li>선언적 환경 레코드
+<ul>
+<li>let, const 키워드로 선언한 전역 변수, 함수 표현식은 선언적 환경 레코드에 등록하고 관리한다.</li>
+<li>그러므로 let, const 키워드로 선언한 전역 변수, 함수 표현식은 전역 객체의 프로퍼티로 등록되지 않는다.</li>
+<li>물론 let, const 키워드로 선언한 변수와 함수도 호이스팅이 발생한다. 하지만 해당 변수는 런타임에 컨트롤이 변수 선언문에 도달하기 전까지는 일시적 사각지대에 빠지기 때문에 참조할 수 없다.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>this 바인딩
+<ul>
+<li>전역 환경 레코드의 <code class="language-text">[[GlobalThisValue]]</code> 내부 슬롯에 this가 바인딩된다.</li>
+</ul>
+</li>
+<li>외부 렉시컬 환경에 대한 참조 결정
+<ul>
+<li>현재 평가 중인 소스코드를 포함한 외부 소스코드의 렉시컬 환경, 즉 상위 스코프를 가리킨다. 이를 통해 단방향 링크드 리스트인 스코프체인을 구현한다.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h4>전역 코드 실행</h4>
+<p>전역 코드 평가가 끝난 후 전역 코드가 순차적으로 실행된다. 이때 변수 할당문이 실행 되면서 전역변수에 값이 할당 되 고 함수가 호출된다.</p>
+<p>식별자는 스코프가 다르면 같은 이름을 가질 수 있다. 따라서 어느 스코프의 식별자를 참조해야하는지 결정할 필요가 있다. 이를 식별자 결정 이라 한다.</p>
+<p>식별자 결정을 위해 실행 중인 실행 컨텍스트에서 식별자를 검색한다. 선언된 식별자는 실행 컨텍스트의 렉시컬환경의 환경 레코드에 등록되어 있다.</p>
+<p>만약 실행중인 컨텍스트에서 식별자를 찾을 수 없으면 외부 렉시컬환경에 대한 참조를 통해 상위 스코프로 이동하여 식별자를 찾아낸다. 이것이 바로 스코프 체인의 원리이다.</p>
+<h4>함수 코드 평가</h4>
+<p>전역 코드를 실행하는 중 함수 호출문을 마주치면 전역코드의 실행을 일시 중지하고 함수 내부로 코드의 제어권을 이동한다. 그리고 함수 코드의 평가를 시작한다.</p>
+<ol>
+<li>함수 실행 컨텍스트 생성
+<ol>
+<li>함수 실행 컨텍스트가 생성된다</li>
+<li>함수 렉시컬 환경이 완성된 다음 생성된 함수 실행 컨텍스트가 실행 컨텍스트 스텍에 푸시된다.</li>
+</ol>
+</li>
+<li>함수 렉시컬 환경 생성
+<ol>
+<li>함수 환경 레코드 생성
+<ol>
+<li>함수 환경 레코드는 매개변수, arguments 객체, 함수 내부에서 선언한 지역변수를 등록하고 관리한다.</li>
+</ol>
+</li>
+<li>this 바인딩
+<ol>
+<li>함수 환경 레코드의 <code class="language-text">[[ThisValue]]</code> 내부 슬롯에 this가 바인딩된다.</li>
+</ol>
+</li>
+<li>외부 렉시컬 환경에 대한 참조 결정
+<ol>
+<li>외부 렉시컬 환경에 대한 참조에 해당 함수 정의가 평가된 시점에 실행 중인 실행 컨텍스트의 렉시컬환경의 참조가 할당된다.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h4>함수 코드 실행</h4>
+<p>함수 코드의 평가가 끝나고 함수의 소스코드가 순차적으로 실행하는 런타임이 시작된다. 매개변수의 인수가 할당되고, 변수 할당문이 실행되면서 지역 변수에 값이 할당된다.</p>
+<p>함수의 코드가 모두 실행 되면 해당 함수 코드의 실행이 종료된다. 그럼 실행 컨텍스트 스텍에서 해당 함수의 실행 컨텍스트가 팝되고 일시 중지 중이던 전역 코드의 실행 컨텍스트가 실행중인 실행컨텍스트가 되고, 전역 코드가 모두 실행되어 전역 코드의 실행이 종료되면 실행 컨텍스트 스텍에서 팝되어 제거되고 실행 컨텍스트 스텍에는 아무것도 남지 않게 된다.</p>
+<h3>후기</h3>
+<p>실행 컨텍스트를 공부하면서 복잡한 구조와 비슷한 명칭 덕분에 동작원리를 따라가는데 꽤나 힘들었었다.
+하지만 실행 컨텍스트의 원리에 대하여 명확하게 이해하게 되면서 어설프게 알고 있었던 호이스팅이 왜 일어 나는지, 그리고 클로저와 이벤트 위임, 비동기 프로그래밍에 대하여 좀더 명확히 이해할 수 있게된 좋은 기회였던 것 같다.</p>
+<h2>Source</h2>
+<ul>
+<li>이웅모, 모던 자바스크립트 Deep Dive, 위키북스, 2020</li>
+</ul></div><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css 1u7ncg7">.css-1u7ncg7{width:100%;background-image:linear-gradient(60deg, #29323c 0%, #485563 100%);color:#ffffff;}</style><div class="css-1u7ncg7 e1oae0v80"><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v81">Thank you for visiting My Blog, Have a Good day<!-- --><br/>Powered By Gatsby.<!-- --></footer></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/javascript/execution-context-2/";window.___webpackCompilationHash="043c9560800a1140aaa9";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-c9fa82aa5b1f9c65f078.js"],"app":["/app-29d7e7e32f3103e349d2.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-da0f1354074b3fb451dc.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-0b51e53dcc2ebfa97654.js"],"component---src-pages-info-tsx":["/component---src-pages-info-tsx-6aa25c9e257c70af717c.js"],"component---src-templates-post-template-tsx":["/component---src-templates-post-template-tsx-e158466ded978b21b594.js"]};/*]]>*/</script><script src="/polyfill-c9fa82aa5b1f9c65f078.js" nomodule=""></script><script src="/app-29d7e7e32f3103e349d2.js" async=""></script><script src="/framework-c45ea1cbb39153ed5c73.js" async=""></script><script src="/webpack-runtime-42ff7cc44906b8d738e5.js" async=""></script></body></html>
