@@ -14,16 +14,20 @@ const Background = styled.div`
 `
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 768px;
-  height: 400px;
+  /* flex-direction: column; */
+  align-items: center;
+  width: 1020px;
+  height: 100px;
   margin: 0 auto;
+  gap: 12px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
-    height: 300px;
     padding: 0 20px;
   } ;
 `
@@ -34,7 +38,7 @@ const SubTitle = styled.div`
 `
 const Title = styled.div`
   margin-top: 5px;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 700;
 `
 
@@ -44,12 +48,8 @@ const Introduction: FunctionComponent<IntroductionProps> = function ({
   return (
     <Background>
       <Wrapper>
-        {/* <ProfileImage profileImage={profileImage} /> */}
-
-        <div>
-          <SubTitle>Nice to Meet You,</SubTitle>
-          <Title>I'm Junior Frontend Developer Wook.</Title>
-        </div>
+        <ProfileImage profileImage={profileImage} />
+        <Title>codnr98</Title>
       </Wrapper>
     </Background>
   )
