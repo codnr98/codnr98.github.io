@@ -76,7 +76,7 @@ f2()
 
 코드의 실행 순서에 따라 실행 컨텍스트가 실행 컨텍스트 스택에 push 되고 pop 된다.
 
-![[스크린샷 2023-09-26 오전 11.01.57.png]]
+![execution-context-1-1.png](./execution-context-1-1.png)
 
 ### 렉시컬 환경
 
