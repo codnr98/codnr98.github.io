@@ -38,8 +38,13 @@ type IndexPageProps = {
 
 const Container = styled.main`
   display: flex;
-  /* flex-direction: column; */
   height: 100%;
+  margin: 30px auto;
+  gap: 20px;
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
 `
 
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
