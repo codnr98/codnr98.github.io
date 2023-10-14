@@ -28,7 +28,7 @@ const CategoryListWrapper = styled.div`
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr7;
     gap: 8px;
     overflow-y: auto;
     padding: 0 20px;
