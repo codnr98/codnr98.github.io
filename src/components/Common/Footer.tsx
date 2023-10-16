@@ -16,8 +16,9 @@ const FooterWrapper = styled.footer`
 `
 const Background = styled.div`
   width: 100%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  color: #ffffff;
+  /* background-image: linear-gradient(60deg, #29323c 0%, #485563 100%); */
+  background-color: #e6f6ff;
+  color: #0a7ea3;
 `
 
 const Footer: FunctionComponent = function () {

@@ -28,7 +28,7 @@ const CategoryListWrapper = styled.div`
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr7;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
     overflow-y: auto;
     padding: 0 20px;
@@ -41,7 +41,12 @@ const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => (
   padding: 5px 0;
   font-size: 18px;
   font-weight: ${({ active }) => (active ? '800' : '400')};
+  color: ${({ active }) => (active ? '#0a7ea3' : '')};
   cursor: pointer;
+
+  :hover {
+    color: #0a7ea3;
+  }
 
   &:last-of-type {
     margin-right: 0;
